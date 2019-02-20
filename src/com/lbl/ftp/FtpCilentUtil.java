@@ -117,12 +117,10 @@ public class FtpCilentUtil extends AbstractFtp {
 		final FTPClient client = new FTPClient();
 		client.setControlEncoding(this.charset.toString());
 		try {
-			if(!client.isConnected()){
-				// 连接ftp服务器
-				client.connect(host, port);
-				// 登录ftp服务器
-				client.login(user, password);
-				}
+			// 连接ftp服务器
+			client.connect(host, port);
+			// 登录ftp服务器
+			client.login(user, password);
 		} catch (IOException e) {
 			throw new FtpException(e);
 		}
